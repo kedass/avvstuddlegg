@@ -1,1 +1,377 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studio Legale Antonio Coscia</title>
+    <style>
+        /* Reset CSS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
+        body {
+            font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9fafb;
+            overflow-x: hidden;
+        }
+
+        /* Header e Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 70px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 50px;
+            background-color: #ffffff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            color: #0b4a6e;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            font-weight: 500;
+            color: #334a5c;
+            transition: all 0.2s ease;
+        }
+
+        nav ul li a:hover,
+        nav ul li a:focus,
+        .active-link {
+            color: #1d679e;
+            border-bottom: 2px solid #1d679e;
+            padding-bottom: 5px;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: calc(100vh - 70px);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #f0fbff;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            width: 50%;
+            padding-left: 120px;
+        }
+
+        .hero-image {
+            position: absolute;
+            right: -30px;
+            top: 50%;
+            transform: translateY(-50%);
+            max-width: 640px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 20px 25px -5px rgba(0,117,239,0.3);
+        }
+
+        .hero h1 {
+            font-size: clamp(2rem, 6vw, 4rem);
+            line-height: 1;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: #3b71ca;
+            max-width: 600px;
+        }
+
+        /* Sezioni */
+        section {
+            padding: 80px 50px;
+        }
+
+        section:nth-child(even) {
+            background-color: white;
+        }
+
+        .section-title {
+            font-size: clamp(1.2rem, 4vw, 3rem);
+            margin-bottom: 40px;
+            color: #0b4a6e;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 0;
+            width: 50%;
+            height: 3px;
+            background-color: #3b71ca;
+        }
+
+        /* Chi Siamo */
+        .about-content h3 {
+            font-size: clamp(1rem, 2vw, 2rem);
+            margin-bottom: 20px;
+        }
+
+        /* Servizi */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background-color: #f8fafc;
+            border-radius: 8px;
+            padding: 40px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px -4px rgba(0,117,239,0.2);
+        }
+
+        /* Avvocati */
+        .lawyer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .lawyer-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .lawyer-image {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .lawyer-info h3 {
+            font-size: clamp(1rem, 2vw, 1.75rem);
+            margin-bottom: 10px;
+        }
+
+        /* Crea il tuo sito */
+        .cta-section {
+            background-color: #e8f4ff;
+            text-align: center;
+            padding: 60px;
+        }
+
+        .cta-content h3,
+        .cta-content p {
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0b4a6e;
+            color: white;
+            padding: 50px 20px;
+        }
+
+        .footer-content h3 {
+            font-size: clamp(1rem, 2vw, 1.75rem);
+            margin-bottom: 20px;
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            header {
+                padding: 0 20px;
+            }
+            
+            nav ul li:not(:first-child):not(:last-child) {
+                display: none; /* Menu hamburger per dispositivi mobili */
+            }
+            
+            .hero-content,
+            .about-content h3 {
+                width: auto;
+                max-width: 560px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav ul li:not(:first-child):not(:last-child) span {
+                display: none; /* Nascondi i link del menu */
+            }
+            
+            .hero-content {
+                width: auto;
+                max-width: 500px;
+                padding-left: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            section {
+                padding: 60px 20px;
+            }
+            
+            .hero h1 {
+                font-size: clamp(1.5rem, 3vw, 2.5rem);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Studio Legale Antonio Coscia</div>
+        <nav>
+            <ul>
+                <li><a href="#home" class="active-link">Home</a></li>
+                <li><a href="#about">Chi Siamo</a></li>
+                <li><a href="#services">Servizi</a></li>
+                <li><a href="#team">Il Team</a></li>
+                <li><a href="#contact">Contatti</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Antonio Coscia Avvocato</h1>
+            <p>Soluzioni legali innovative in un contesto professionale e trasparente. Dedicato a fornire assistenza completa con metodi moderni.</p>
+        </div>
+        <img src="https://via.placeholder.com/640x360" alt="Studio Legale Antonio Coscia" class="hero-image">
+    </section>
+
+    <section id="about">
+        <div class="container about-content">
+            <h2>Chi Siamo</h2>
+            <p>Che cosa rende unico lo Studio Coscia? La combinazione di esperienza giuridica consolidata e approcci innovativi che ci permettono di affrontare le sfide legali contemporanee in modo efficace.</p>
+        </div>
+    </section>
+
+    <section id="services">
+        <h2 class="section-title">Servizi</h2>
+        <div class="services-grid">
+            <!-- Servizio 1 -->
+            <div class="service-card">
+                <h3>Diritto Civile</h3>
+                <p>Casistica completa per i più comuni problemi civili, dalla mediazione alla causa giudiziale con un'assistenza personalizzata.</p>
+            </div>
+
+            <!-- Servizio 2 -->
+            <div class="service-card">
+                <img src="https://via.placeholder.com/360" alt="Servizio 1" style="width:100%; height:auto; margin-bottom:20px;">
+                <div class="lawyer-info">La tua esperienza giuridica personalizzata</div>
+            </div>
+
+            <!-- Servizio 2 -->
+            <div class="service-card">
+                <!-- Inserisci descrizione dettagliata dei servizi qui -->
+            </div>
+        </div>
+    </section>
+
+    <section id="team" style="background-color: white;">
+        <h2 class="section-title">Il Team</h2>
+        <p>Un team di professionisti dedicati che lavorano con passione e competenza per la tua causa.</p>
+        
+        <div class="lawyer-grid">
+            <!-- Avvocato 1 -->
+            <div class="lawyer-card">
+                <img src="https://via.placeholder.com/250" alt="Antonio Coscia" class="lawyer-image">
+                <div class="lawyer-info">
+                    <h3>Avv. Antonio Coscia</h3>
+                    <!-- Dettagli avvocato 1 -->
+                </div>
+            </div>
+
+            <!-- Avvocati aggiuntivi in una seconda riga -->
+        </div>
+    </section>
+
+    <section class="cta-section" id="contact">
+        <div class="container cta-content">
+            <h2>Contattaci</h2>
+            <!-- Messaggio CTA per la creazione del sito -->
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Studio Legale Antonio Coscia - Tutti i diritti riservati</p>
+    </footer>
+
+    <script>
+        // JavaScript per il menu responsive
+        const navToggle = document.querySelector('nav ul');
+        let isMenuOpen = false;
+
+        function toggleNav() {
+            if (!isMenuVisible()) {
+                navToggle.style.display = 'block';
+                navToggle.classList.add('active-link');
+                updateNavigation();
+            }
+            
+            // Altri script per interattività
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('nav ul li a');
+
+            function scrollSpy() {
+                let current;
+                
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    if(pageHeight - window.innerHeight >= sectionTop &&
+                       pageYOffset <= sectionTop + 100) {
+                        current = section.getAttribute('id');
+                        
+                        navLinks.forEach(link => {
+                            link.classList.remove('active-link', 'focus-visible');
+                            // Rimuovere l'attributo active-link dal relativo elemento a
+                            if (link.textContent.toLowerCase().includes(current)) {
+                                link.classList.add('active-link');
+                            }
+                        });
+                    } else {
+                        navLinks.forEach(link => {
+                            link.classList.remove('active-link');
+                        });
+                    }
+                });
+
+            }
+
+        window.addEventListener('scroll', scrollSpy);
+    </script>
+</body>
