@@ -11,6 +11,11 @@
 <body>
     <header>
         <div class="logo">ANTONIO<span class="logo-green">COSCIA</span></div>
+
+        <div class="header-symbol">
+            <i class="fas fa-balance-scale"></i>
+        </div>
+
         <nav>
             <ul class="nav-links">
                 <li><a href="#home" class="active-link">Home</a></li>
@@ -20,13 +25,13 @@
                 <li><a href="#contact">Contatti</a></li>
             </ul>
         </nav>
+
         <div class="hamburger">
             <div></div>
             <div></div>
             <div></div>
         </div>
     </header>
-
     <section class="hero" id="home">
         <div class="hero-content">
             <h1>Soluzioni Legali all'Avanguardia</h1>
@@ -96,9 +101,15 @@
         <div class="container">
             <h2 class="section-title">Contattaci</h2>
             <form class="contact-form" action="https://formspree.io/f/your_form_id" method="POST">
-                <input type="text" name="name" placeholder="Il tuo nome" required>
+                <input type="text" name="name" placeholder="Nome e Cognome" required>
+                <input type="text" name="subject" placeholder="Oggetto" required>
+                <input type="tel" name="phone" placeholder="Telefono" required>
                 <input type="email" name="email" placeholder="La tua email" required>
                 <textarea name="message" placeholder="Il tuo messaggio" required></textarea>
+                <label>
+                    <input type="checkbox" name="terms" required>
+                    Accetto i <a href="#">termini e condizioni</a>
+                </label>
                 <button type="submit" class="cta-button">Invia Messaggio</button>
             </form>
         </div>
@@ -112,9 +123,21 @@
                 <li><a href="#">Termini e Condizioni</a></li>
             </ul>
             <div class="social-links">
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.facebook.com/TUAPAGINA" target="_blank" aria-label="Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/TUOPROFILO" target="_blank" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://www.instagram.com/TUONOME" target="_blank" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.tiktok.com/@TUONOME" target="_blank" aria-label="TikTok">
+                    <i class="fab fa-tiktok"></i>
+                </a>
+                <a href="https://twitter.com/TUONOME" target="_blank" aria-label="X (Twitter)">
+                    <i class="fab fa-x-twitter"></i>
+                </a>
             </div>
         </div>
     </footer>
