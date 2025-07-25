@@ -1,17 +1,31 @@
 document.addEventListener('DOMContentLoaded', function() {
     const navLinks = document.querySelectorAll('nav a');
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('.nav-links');
+    const backToTopButton = document.querySelector('.back-to-top');
 
+    // Smooth scrolling for nav links
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
             e.preventDefault();
             let target = document.querySelector(this.getAttribute('href'));
             if (target) {
                 window.scrollTo({
-                    top: target.offsetTop - 70, // Adjust for fixed header
+                    top: target.offsetTop - 70,
                     behavior: 'smooth'
                 });
+                if (navMenu.classList.contains('active')) {
+                    hamburger.classList.remove('active');
+                    navMenu.classList.remove('active');
+                }
             }
         });
+    });
+
+    // Hamburger menu toggle
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navMenu.classList.toggle('active');
     });
 
     // Active link switching on scroll
@@ -33,6 +47,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 a.classList.add('active-link');
             }
         });
+
+        // Back to top button visibility
+        if (window.pageYOffset > 300) {
+            backToTopButton.classList.add('show');
+        } else {
+            backToTopButton.classList.remove('show');
+        }
     });
 
     // Simple fade-in animation for sections
@@ -49,19 +70,4 @@ document.addEventListener('DOMContentLoaded', function() {
         section.style.transform = "translateY(20px)";
         observer.observe(section);
     });
-
-    const style = document.createElement('style');
-    style.innerHTML = `
-    @keyframes fadeInUp {
-        from {
-            opacity: 0;
-            transform: translateY(20px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-    `;
-    document.head.appendChild(style);
 });
