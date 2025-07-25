@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Studio Legale Antonio Coscia</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
@@ -11,7 +12,7 @@
     <header>
         <div class="logo">ANTONIO<span class="logo-green">COSCIA</span></div>
         <nav>
-            <ul>
+            <ul class="nav-links">
                 <li><a href="#home" class="active-link">Home</a></li>
                 <li><a href="#about">Chi Siamo</a></li>
                 <li><a href="#services">Servizi</a></li>
@@ -19,79 +20,96 @@
                 <li><a href="#contact">Contatti</a></li>
             </ul>
         </nav>
+        <div class="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
     </header>
 
     <section class="hero" id="home">
         <div class="hero-content">
-            </nav>
-            </header>
+            <h1>Soluzioni Legali all'Avanguardia</h1>
+            <p>Assistenza legale personalizzata, costruita sulla fiducia e sull'eccellenza.</p>
+            <a href="#contact" class="cta-button">Richiedi una Consulenza</a>
+        </div>
+    </section>
 
-            <section class="hero" id="home">
-                <div class="hero-content">
-                    <h1>Soluzioni Legali all'Avanguardia</h1>
-                    <p>Assistenza legale personalizzata, costruita sulla fiducia e sull'eccellenza.</p>
-                    <a href="#contact" class="cta-button">Richiedi una Consulenza</a>
+    <section id="about">
+        <div class="container about-content">
+            <h2 class="section-title">Chi Siamo</h2>
+            <p>Lo Studio Legale Antonio Coscia è un punto di riferimento per chi cerca competenza, dedizione e un approccio moderno alla pratica legale. La nostra missione è offrire soluzioni efficaci e trasparenti, mettendo sempre al primo posto le esigenze del cliente. Crediamo in un rapporto diretto e di fiducia, dove ogni caso viene trattato con la massima attenzione e professionalità.</p>
+        </div>
+    </section>
+
+    <section id="services">
+        <h2 class="section-title">I Nostri Servizi</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <i class="fas fa-balance-scale"></i>
+                <h3>Diritto Civile</h3>
+                <p>Assistenza completa in materia di contratti, obbligazioni, diritti reali, successioni e responsabilità civile.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-users"></i>
+                <h3>Diritto di Famiglia</h3>
+                <p>Gestione di separazioni, divorzi, affidamento dei minori e questioni patrimoniali con sensibilità e competenza.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-briefcase"></i>
+                <h3>Diritto del Lavoro</h3>
+                <p>Tutela dei diritti dei lavoratori e dei datori di lavoro, consulenza su contratti, licenziamenti e controversie.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-hand-holding-usd"></i>
+                <h3>Recupero Crediti</h3>
+                <p>Procedure rapide ed efficaci per il recupero dei crediti, sia in fase stragiudiziale che giudiziale.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="team">
+        <h2 class="section-title">Il Nostro Team</h2>
+        <div class="lawyer-grid">
+            <div class="lawyer-card">
+                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80" alt="Avvocato Antonio Coscia" class="lawyer-image">
+                <div class="lawyer-info">
+                    <h3>Avv. Antonio Coscia</h3>
+                    <p>Fondatore dello studio, con oltre 20 anni di esperienza nel campo del diritto civile e commerciale.</p>
                 </div>
-            </section>
+            </div>
+        </div>
+    </section>
 
-            <section id="about">
-                <div class="container about-content">
-                    <h2 class="section-title">Chi Siamo</h2>
-                    <p>Lo Studio Legale Antonio Coscia è un punto di riferimento per chi cerca competenza, dedizione e un approccio moderno alla pratica legale. La nostra missione è offrire soluzioni efficaci e trasparenti, mettendo sempre al primo posto le esigenze del cliente. Crediamo in un rapporto diretto e di fiducia, dove ogni caso viene trattato con la massima attenzione e professionalità.</p>
-                </div>
-            </section>
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title">Contattaci</h2>
+            <form class="contact-form" action="https://formspree.io/f/your_form_id" method="POST">
+                <input type="text" name="name" placeholder="Il tuo nome" required>
+                <input type="email" name="email" placeholder="La tua email" required>
+                <textarea name="message" placeholder="Il tuo messaggio" required></textarea>
+                <button type="submit" class="cta-button">Invia Messaggio</button>
+            </form>
+        </div>
+    </section>
 
-            <section id="services">
-                <h2 class="section-title">I Nostri Servizi</h2>
-                <div class="services-grid">
-                    <div class="service-card">
-                        <h3>Diritto Civile</h3>
-                        <p>Assistenza completa in materia di contratti, obbligazioni, diritti reali, successioni e responsabilità civile.</p>
-                    </div>
-                    <div class="service-card">
-                        <h3>Diritto di Famiglia</h3>
-                        <p>Gestione di separazioni, divorzi, affidamento dei minori e questioni patrimoniali con sensibilità e competenza.</p>
-                    </div>
-                    <div class="service-card">
-                        <h3>Diritto del Lavoro</h3>
-                        <p>Tutela dei diritti dei lavoratori e dei datori di lavoro, consulenza su contratti, licenziamenti e controversie.</p>
-                    </div>
-                    <div class="service-card">
-                        <h3>Recupero Crediti</h3>
-                        <p>Procedure rapide ed efficaci per il recupero dei crediti, sia in fase stragiudiziale che giudiziale.</p>
-                    </div>
-                </div>
-            </section>
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Studio Legale Antonio Coscia - P.IVA 12345678901</p>
+            <ul class="footer-links">
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Termini e Condizioni</a></li>
+            </ul>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </footer>
 
-            <section id="team">
-                <h2 class="section-title">Il Nostro Team</h2>
-                <div class="lawyer-grid">
-                    <div class="lawyer-card">
-                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80" alt="Avvocato Antonio Coscia" class="lawyer-image">
-                        <div class="lawyer-info">
-                            <h3>Avv. Antonio Coscia</h3>
-                            <p>Fondatore dello studio, con oltre 20 anni di esperienza nel campo del diritto civile e commerciale.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
+    <a href="#" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
 
-            <section id="contact">
-                <div class="container">
-                    <h2 class="section-title">Contattaci</h2>
-                    <form class="contact-form">
-                        <input type="text" name="name" placeholder="Il tuo nome" required>
-                        <input type="email" name="email" placeholder="La tua email" required>
-                        <textarea name="message" placeholder="Il tuo messaggio" required></textarea>
-                        <button type="submit" class="cta-button">Invia Messaggio</button>
-                    </form>
-                </div>
-            </section>
-
-            <footer>
-                <p>&copy; 2025 Studio Legale Antonio Coscia - Tutti i diritti riservati.</p>
-            </footer>
-
-            <script src="script.js"></script>
-            </body>
-            </html>
+    <script src="script.js"></script>
+</body>
+</html>
